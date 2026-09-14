@@ -3,110 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDOSEN INFRATECH SAS | Construction & Infrastructures</title>
+
+    <title>INDOSEN INFRATECH SAS | Construction & Infrastructure</title>
+
+    <meta name="description" content="INDOSEN INFRATECH SAS - Construction, infrastructures, bâtiments, projets médicaux et travaux publics au Sénégal.">
 
     <style>
-        body {
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
             color: #222;
             line-height: 1.6;
+            background: #ffffff;
         }
 
         header {
-            background: #123b5d;
+            background: #0b2d4a;
             color: white;
-            padding: 20px 8%;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 22px;
+            font-size: 15px;
             font-weight: bold;
         }
 
+        nav a:hover {
+            color: #e3a526;
+        }
+
         .hero {
-            background: #e9f0f5;
-            padding: 90px 8%;
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 80px 8%;
+            background:
+                linear-gradient(rgba(5, 30, 50, 0.78), rgba(5, 30, 50, 0.78)),
+                linear-gradient(135deg, #123f60, #071e31);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+            line-height: 1.15;
         }
 
         .hero h2 {
-            font-size: 42px;
-            color: #123b5d;
-            margin-bottom: 15px;
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 25px;
+            color: #e3a526;
         }
 
         .hero p {
-            font-size: 20px;
-            max-width: 800px;
+            font-size: 19px;
+            max-width: 750px;
             margin: auto;
+        }
+
+        .buttons {
+            margin-top: 35px;
         }
 
         .button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 14px 25px;
-            background: #d99a19;
-            color: white;
-            text-decoration: none;
+            padding: 14px 28px;
+            margin: 8px;
             border-radius: 5px;
+            text-decoration: none;
             font-weight: bold;
         }
 
-        section {
-            padding: 60px 8%;
+        .button-primary {
+            background: #e3a526;
+            color: white;
         }
 
-        section h2 {
+        .button-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
             text-align: center;
-            color: #123b5d;
-            margin-bottom: 35px;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            color: #0b2d4a;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .about {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .about p {
+            margin-bottom: 18px;
         }
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
         }
 
         .card {
-            padding: 25px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
             background: white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e1e1e1;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            color: #123b5d;
+            color: #0b2d4a;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #555;
+        }
+
+        .services {
+            background: #f5f7f9;
         }
 
         .projects {
-            background: #f5f5f5;
+            background: #ffffff;
         }
 
-        footer {
-            background: #123b5d;
+        .project-card {
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e5e5e5;
+        }
+
+        .project-image {
+            height: 170px;
+            background: linear-gradient(135deg, #164a70, #0b2d4a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
-            text-align: center;
-            padding: 35px 8%;
+            font-size: 42px;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: #0b2d4a;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #555;
         }
 
         .contact {
+            background: #0b2d4a;
+            color: white;
             text-align: center;
         }
 
-        @media (max-width: 700px) {
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title p {
+            color: #d9e2e9;
+        }
+
+        .contact-info {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-item {
+            margin: 18px 0;
+            font-size: 18px;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #061b2b;
+            color: #d9e2e9;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        .language {
+            margin-top: 35px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .language h3 {
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 800px) {
+
             header {
                 display: block;
                 text-align: center;
@@ -117,173 +274,436 @@
             }
 
             nav a {
-                margin: 5px;
+                margin: 5px 8px;
+                display: inline-block;
+            }
+
+            .hero h1 {
+                font-size: 38px;
             }
 
             .hero h2 {
-                font-size: 30px;
+                font-size: 21px;
+            }
+
+            section {
+                padding: 60px 6%;
             }
         }
+
     </style>
 </head>
 
 <body>
 
 <header>
-    <h1>INDOSEN INFRATECH SAS</h1>
+
+    <div class="logo">
+        INDOSEN INFRATECH SAS
+    </div>
 
     <nav>
-        <a href="#about">About</a>
+        <a href="#about">À propos</a>
         <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Projets</a>
         <a href="#contact">Contact</a>
     </nav>
+
 </header>
 
+
+<!-- HERO -->
+
 <section class="hero">
-    <h2>Building Today, Shaping Tomorrow</h2>
 
-    <p>
-        INDOSEN INFRATECH SAS is a construction and infrastructure company
-        committed to delivering quality, reliable and innovative projects.
-    </p>
+    <div class="hero-content">
 
-    <a class="button" href="#contact">Contact Us</a>
+        <h1>INDOSEN INFRATECH SAS</h1>
+
+        <h2>Construction • Infrastructure • Engineering</h2>
+
+        <p>
+            Building reliable infrastructure and delivering quality construction
+            solutions for the future of Senegal.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="button button-primary">
+                Découvrir nos projets
+            </a>
+
+            <a href="#contact" class="button button-secondary">
+                Nous contacter
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
+
+
+<!-- ABOUT -->
 
 <section id="about">
-    <h2>About Us</h2>
 
-    <p>
-        INDOSEN INFRATECH SAS operates in the construction and infrastructure
-        sector, providing professional solutions for building, infrastructure
-        and engineering projects.
-    </p>
+    <div class="section-title">
 
-    <p>
-        Our activities include construction projects, infrastructure works,
-        medical facilities, residential and commercial buildings, and other
-        major development projects.
-    </p>
+        <h2>À propos de nous</h2>
+
+        <p>Une entreprise engagée dans la construction et les infrastructures</p>
+
+    </div>
+
+    <div class="about">
+
+        <p>
+            <strong>INDOSEN INFRATECH SAS</strong> est une entreprise active
+            dans le secteur de la construction, des infrastructures et des
+            travaux d'ingénierie.
+        </p>
+
+        <p>
+            Notre objectif est de fournir des solutions de construction
+            fiables, professionnelles et adaptées aux besoins de nos clients.
+        </p>
+
+        <p>
+            Nous intervenons notamment dans les bâtiments, les infrastructures,
+            les établissements médicaux, les travaux routiers et différents
+            projets de développement.
+        </p>
+
+    </div>
+
 </section>
 
-<section id="services">
-    <h2>Our Services</h2>
+
+<!-- SERVICES -->
+
+<section id="services" class="services">
+
+    <div class="section-title">
+
+        <h2>Nos services</h2>
+
+        <p>Des solutions adaptées aux projets de construction et d'infrastructure</p>
+
+    </div>
 
     <div class="cards">
 
         <div class="card">
-            <h3>Building Construction</h3>
+
+            <div class="card-icon">🏗️</div>
+
+            <h3>Construction de bâtiments</h3>
+
             <p>
-                Construction of residential, commercial and professional buildings.
+                Construction de bâtiments résidentiels, commerciaux
+                et professionnels.
             </p>
+
         </div>
 
-        <div class="card">
-            <h3>Infrastructure</h3>
-            <p>
-                Infrastructure development and civil engineering works.
-            </p>
-        </div>
 
         <div class="card">
-            <h3>Medical Facilities</h3>
+
+            <div class="card-icon">🏢</div>
+
+            <h3>Infrastructures</h3>
+
             <p>
-                Construction and development of healthcare facilities and dialysis centers.
+                Développement et réalisation de projets d'infrastructure
+                et de génie civil.
             </p>
+
         </div>
 
-        <div class="card">
-            <h3>Road Works</h3>
-            <p>
-                Road construction and infrastructure development projects.
-            </p>
-        </div>
 
         <div class="card">
-            <h3>Finishing Works</h3>
+
+            <div class="card-icon">🏥</div>
+
+            <h3>Infrastructures médicales</h3>
+
             <p>
-                Professional finishing, ceilings, flooring and other building works.
+                Construction et développement d'établissements de santé
+                et de centres de dialyse.
             </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🛣️</div>
+
+            <h3>Travaux routiers</h3>
+
+            <p>
+                Travaux de construction et de développement
+                d'infrastructures routières.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">⛏️</div>
+
+            <h3>Projets miniers</h3>
+
+            <p>
+                Participation à des projets liés aux infrastructures
+                et aux activités du secteur minier.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🔨</div>
+
+            <h3>Travaux de finition</h3>
+
+            <p>
+                Travaux de finition, revêtements, faux plafonds,
+                sols et autres travaux de bâtiment.
+            </p>
+
         </div>
 
     </div>
+
 </section>
+
+
+<!-- PROJECTS -->
 
 <section id="projects" class="projects">
-    <h2>Our Projects</h2>
+
+    <div class="section-title">
+
+        <h2>Nos projets</h2>
+
+        <p>Quelques domaines et projets représentatifs de notre activité</p>
+
+    </div>
+
 
     <div class="cards">
 
-        <div class="card">
-            <h3>Dialysis Center – Thiès</h3>
-            <p>
-                Development of a major dialysis center project in the Thiès region.
-            </p>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                🏥
+            </div>
+
+            <div class="project-content">
+
+                <h3>Centre de dialyse – Thiès</h3>
+
+                <p>
+                    Projet de construction d'un centre de dialyse
+                    dans la région de Thiès.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Dialysis Center – Ziguinchor</h3>
-            <p>
-                Construction project for a dialysis center in Ziguinchor.
-            </p>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                🏥
+            </div>
+
+            <div class="project-content">
+
+                <h3>Centre de dialyse – Ziguinchor</h3>
+
+                <p>
+                    Projet de construction d'un centre de dialyse
+                    à Ziguinchor.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Buildings – Dakar</h3>
-            <p>
-                Building construction projects in Sacré-Cœur and Ouakam.
-            </p>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                🏢
+            </div>
+
+            <div class="project-content">
+
+                <h3>Projets immobiliers – Dakar</h3>
+
+                <p>
+                    Projets de construction de bâtiments à
+                    Sacré-Cœur et Ouakam.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Building – Almadies</h3>
-            <p>
-                Building finishing and construction works in Almadies, Dakar.
-            </p>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                🏢
+            </div>
+
+            <div class="project-content">
+
+                <h3>Projet – Almadies</h3>
+
+                <p>
+                    Travaux de construction et de finition
+                    d'un bâtiment dans la zone des Almadies.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Mining Project – Mboro</h3>
-            <p>
-                Infrastructure and construction activities related to a mining project.
-            </p>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                ⛏️
+            </div>
+
+            <div class="project-content">
+
+                <h3>Projet minier – Mboro</h3>
+
+                <p>
+                    Participation à un projet lié au secteur
+                    minier et aux infrastructures.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Road Infrastructure</h3>
+
+        <div class="project-card">
+
+            <div class="project-image">
+                🛣️
+            </div>
+
+            <div class="project-content">
+
+                <h3>Infrastructures routières</h3>
+
+                <p>
+                    Développement de projets d'infrastructure
+                    et de travaux routiers.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+
+        <h2>Contactez-nous</h2>
+
+        <p>
+            Nous sommes disponibles pour discuter de vos projets.
+        </p>
+
+    </div>
+
+
+    <div class="contact-info">
+
+        <div class="contact-item">
+            📞
+            <strong>Téléphone :</strong>
+            <a href="tel:+221784497979">
+                +221 78 449 79 79
+            </a>
+        </div>
+
+
+        <div class="contact-item">
+            📧
+            <strong>Email :</strong>
+            <a href="mailto:indosengroup@gmail.com">
+                indosengroup@gmail.com
+            </a>
+        </div>
+
+
+        <div class="buttons">
+
+            <a
+                href="https://wa.me/221784497979"
+                class="button button-primary"
+                target="_blank">
+                WhatsApp
+            </a>
+
+            <a
+                href="mailto:indosengroup@gmail.com"
+                class="button button-secondary">
+                Envoyer un email
+            </a>
+
+        </div>
+
+
+        <div class="language">
+
+            <h3>English</h3>
+
             <p>
-                Infrastructure and road construction projects under development.
+                INDOSEN INFRATECH SAS is a construction and infrastructure
+                company providing professional solutions in building,
+                infrastructure, medical facilities, road works and
+                engineering projects.
             </p>
+
         </div>
 
     </div>
+
 </section>
 
-<section id="contact" class="contact">
-    <h2>Contact Us</h2>
 
-    <p><strong>INDOSEN INFRATECH SAS</strong></p>
-
-    <p>
-        📞 Phone: +221 78 449 79 79
-    </p>
-
-    <p>
-        📧 Email:
-        <a href="mailto:indosengroup@gmail.com">
-            indosengroup@gmail.com
-        </a>
-    </p>
-
-    <a class="button" href="mailto:indosengroup@gmail.com">
-        Send us an Email
-    </a>
-</section>
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 INDOSEN INFRATECH SAS. All Rights Reserved.</p>
+
+    <p>
+        © 2026 INDOSEN INFRATECH SAS — All Rights Reserved.
+    </p>
+
 </footer>
+
 
 </body>
 </html>
